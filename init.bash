@@ -1,6 +1,7 @@
 #!/bin/bash
 
 install_path=$HOME/.bash
+. ${install_path}/changecheck.sh
 platform=`uname |tr A-Z a-z`
 
 function smart_bash_load_conf() {
