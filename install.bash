@@ -8,8 +8,8 @@ fi
 
 
 if [[ ! -e ~/.bash_profile ]]; then
-    cp ~/.bash/template/bash_profile.ubuntu
-else:
+    cp ~/.bash/template/bash_profile.ubuntu  ~/.bash_profile
+else
     echo exist .bash_profile
 fi
 
