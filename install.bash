@@ -7,3 +7,9 @@ else
 fi
 
 
+if [[ ! -e ~/.bash_profile ]]; then
+    cp ~/.bash/template/bash_profile.ubuntu
+else:
+    echo exist .bash_profile
+fi
+
