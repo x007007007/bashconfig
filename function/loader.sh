@@ -1,9 +1,9 @@
 #!/bin/bash
 
 install_path=$HOME/.bash
-platform=`uname |tr A-Z a-z`
+platform=$(uname |tr '[:upper:]' '[:lower:]')
 
-function smart_bash_load_conf() {
+function __smart_bash_load_conf() {
   local load_sub_folder script_path sub_platform config_file_path
   load_sub_folder=${1}
   for sub_platform in "" "/$platform"; do
