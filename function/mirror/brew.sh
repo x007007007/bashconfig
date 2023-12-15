@@ -33,10 +33,3 @@ function set_origin() {
 }
 
 
-while getopts oc flag
-do
-    case "${flag}" in
-        c) set_tuna;;
-        o) set_origin;;
-    esac
-done
