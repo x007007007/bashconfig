@@ -3,5 +3,5 @@ echo 'running login loader..'
 source "${HOME}/.bash/function/loader.sh"
 
 
-__smart_bash_load_conf login.d
+eval `__smart_bash_load_conf login.d`
 
