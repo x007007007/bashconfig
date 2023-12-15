@@ -61,7 +61,7 @@ function __cleanSearchPath () {
 
   for exist_path in ${currentPaths[*]} ; do
     if [[ -e "${exist_path}" ]] ; then
-      if  [[ ! ${existPaths[*]} =~ ${exist_path} ]]; then
+      if  [[ ! ${existPaths[*]} =~ [[:space:]]${exist_path}[[:space:]] ]]; then
         existPaths+=( "${exist_path}" )
       fi
     fi
