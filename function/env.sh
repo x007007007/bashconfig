@@ -17,9 +17,7 @@
 #
 #
 function __appendSearchNotExistPath () {
-  local new_path
-  local currentPaths
-  local exist_path
+  local new_path currentPaths exist_path
   new_path=$1
   IFS=':' read -r -a currentPaths <<< "$PATH"
   for exist_path in ${currentPaths[*]} ; do
@@ -28,6 +26,21 @@ function __appendSearchNotExistPath () {
     fi
   done
   currentPaths+=("${new_path}")
+  export PATH=$(IFS=: ; echo "${currentPaths[*]}")
+  return 0
+}
+
+
+function __insertSearchNotExistPath () {
+  local new_path currentPaths exist_path
+  new_path=$1
+  IFS=':' read -r -a currentPaths <<< "$PATH"
+  for exist_path in ${currentPaths[*]} ; do
+    if [[ "${exist_path}" -ef "${new_path}" ]] ; then
+      return 1
+    fi
+  done
+  currentPaths=("${new_path}" "${currentPaths[*]}")
   export PATH=$(IFS=: ; echo "${currentPaths[*]}")
   return 0
 }
