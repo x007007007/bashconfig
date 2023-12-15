@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ../../../.bash/function/env.sh
+source "${HOME}/.bash/function/env.sh"
 
 if [[ -d /usr/local/opt/llvm/bin ]]; then
   echo 'find llvm and config'

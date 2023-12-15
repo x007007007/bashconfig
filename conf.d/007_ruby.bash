@@ -1,5 +1,5 @@
 
-source ../../.bash/function/env.sh
+source "${HOME}/.bash/function/env.sh"
 
 
 if [[ -e "$HOME/.rvm/bin" ]]; then
