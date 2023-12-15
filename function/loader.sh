@@ -9,7 +9,7 @@ function __smart_bash_load_conf() {
   for sub_platform in "" "/$platform"; do
     script_path=${install_path}/${load_sub_folder}${sub_platform}
     if [[ -e "${script_path}" ]]; then
-      find "${script_path}" -name "*.bash" -type f -print | while read -r config_file_path ; do
+      find "${script_path}" -name "*.bash" -type f -depth 1 -print | while read -r config_file_path ; do
         source "${config_file_path}"
       done
     fi
